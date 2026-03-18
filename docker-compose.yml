@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501" # Map container port 8501 to host port 8501
+    volumes:
+      - .:/app # Mount the current directory for development
+    environment:
+      - PYTHONUNBUFFERED=1

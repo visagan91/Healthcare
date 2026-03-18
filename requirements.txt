@@ -18,6 +18,7 @@ fastparquet
 
 torch
 torchvision
+
 pillow
 
 transformers
@@ -25,6 +26,7 @@ sentencepiece
 sacremoses
 sentence-transformers
 nltk
+
 mlxtend
 
 faker
@@ -34,3 +36,16 @@ python-multipart
 matplotlib
 seaborn
 jupyterlab
+requests
+python-dotenv
+
+
+sqlalchemy
+sqlalchemy-utils
+
+
+pytest
+
+googletrans==4.0.0rc1
+google-cloud-translate
+google-cloud-aiplatform
