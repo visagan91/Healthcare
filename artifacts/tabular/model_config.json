@@ -1,0 +1,10 @@
+{
+  "arch": "mlp_tabular",
+  "input_dim": 5380,
+  "num_classes": 3,
+  "classes": [
+    "high",
+    "low",
+    "medium"
+  ]
+}

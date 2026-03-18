@@ -1,0 +1,28 @@
+{
+  "model_id": "chatbot_rag_conversational_v3",
+  "kind": "chatbot",
+  "task": "conversation",
+  "model_type": "retrieval_augmented_seq2seq_attention",
+  "input_field": "query",
+  "history_field": "history",
+  "max_input_len": 120,
+  "max_output_len": 40,
+  "vocab_path": "/Users/mambaforever/Guvi/HealthCare/artifacts/chatbot/chatbot_rag_conversational_v3/vocab.pkl",
+  "idx2word_path": "/Users/mambaforever/Guvi/HealthCare/artifacts/chatbot/chatbot_rag_conversational_v3/idx2word.pkl",
+  "model_path": "/Users/mambaforever/Guvi/HealthCare/artifacts/chatbot/chatbot_rag_conversational_v3/model.pt",
+  "retriever": {
+    "vectorizer_path": "/Users/mambaforever/Guvi/HealthCare/artifacts/chatbot/chatbot_rag_conversational_v3/tfidf.joblib",
+    "doc_store_path": "/Users/mambaforever/Guvi/HealthCare/artifacts/chatbot/chatbot_rag_conversational_v3/doc_store.parquet",
+    "top_k": 2
+  },
+  "special_tokens": {
+    "pad_token": "<pad>",
+    "sos_token": "<sos>",
+    "eos_token": "<eos>",
+    "unk_token": "<unk>"
+  },
+  "metrics": {
+    "best_val_loss": 1.3633173536189234,
+    "bleu": 0.7799533303907423
+  }
+}

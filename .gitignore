@@ -1,0 +1,121 @@
+# ----------------------------
+# Python
+# ----------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# ----------------------------
+# Virtual environments
+# ----------------------------
+venv/
+.venv/
+env/
+ENV/
+
+# ----------------------------
+# Environment / secrets
+# ----------------------------
+.env
+.env.*
+!.env.example
+
+# ----------------------------
+# Jupyter
+# ----------------------------
+.ipynb_checkpoints/
+*.ipynb
+
+# ----------------------------
+# Pytest / coverage
+# ----------------------------
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# ----------------------------
+# Type check / lint caches
+# ----------------------------
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.dmypy.json
+
+# ----------------------------
+# Streamlit
+# ----------------------------
+.streamlit/secrets.toml
+
+# ----------------------------
+# OS / editor files
+# ----------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ----------------------------
+# Logs
+# ----------------------------
+*.log
+logs/
+nohup.out
+
+# ----------------------------
+# Build / distribution
+# ----------------------------
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ----------------------------
+# Model artifacts / data
+# ----------------------------
+artifacts/**/*.pt
+artifacts/**/*.pth
+artifacts/**/*.joblib
+artifacts/**/*.pkl
+artifacts/**/*.npz
+artifacts/**/*.parquet
+artifacts/**/*.csv
+artifacts/**/*.tsv
+artifacts/**/*.feather
+artifacts/**/*.h5
+artifacts/**/*.onnx
+
+data/
+datasets/
+uploads/
+tmp/
+temp/
+
+# Keep manifest/config/json metadata if needed
+!artifacts/manifest.json
+!artifacts/**/*.json
+
+# ----------------------------
+# Cached downloaded models
+# ----------------------------
+.huggingface/
+cache/
+.hf/
+transformers_cache/
+**/.cache/
+
+# ----------------------------
+# SQLite / local db
+# ----------------------------
+*.db
+*.sqlite
+*.sqlite3
+
+# ----------------------------
+# Mac / Linux misc
+# ----------------------------
+*.swp
+*.swo

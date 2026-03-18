@@ -1,0 +1,159 @@
+{
+  "models": [
+    {
+      "model_id": "sentiment_tfidf_logreg_v1",
+      "kind": "sklearn",
+      "task": "sentiment",
+      "model_path": "artifacts/sentiment/sentiment_tfidf_logreg.joblib",
+      "meta_paths": {
+        "config": "artifacts/sentiment/sentiment_config.json",
+        "label_map": "artifacts/sentiment/sentiment_label_map.json"
+      },
+      "input_schema": { "type": "text", "field": "text" }
+    },
+    {
+      "model_id": "risk_logreg_v1",
+      "kind": "sklearn",
+      "task": "risk_classification",
+      "model_path": "artifacts/classification/risk_logreg.joblib",
+      "meta_paths": {
+        "feature_columns": "artifacts/classification/feature_columns.json",
+        "label_map": "artifacts/classification/risk_label_map.json"
+      },
+      "input_schema": { "type": "tabular", "field": "features" }
+    },
+    {
+      "model_id": "risk_rf_v1",
+      "kind": "sklearn",
+      "task": "risk_classification",
+      "model_path": "artifacts/classification/risk_rf.joblib",
+      "meta_paths": {
+        "feature_columns": "artifacts/classification/feature_columns.json",
+        "label_map": "artifacts/classification/risk_label_map.json"
+      },
+      "input_schema": { "type": "tabular", "field": "features" }
+    },
+    {
+      "model_id": "los_linreg_v1",
+      "kind": "sklearn",
+      "task": "los_regression",
+      "model_path": "artifacts/regression/los_linreg.joblib",
+      "meta_paths": {
+        "feature_columns": "artifacts/regression/feature_columns.json"
+      },
+      "input_schema": { "type": "tabular", "field": "features" }
+    },
+    {
+      "model_id": "los_rf_v1",
+      "kind": "sklearn",
+      "task": "los_regression",
+      "model_path": "artifacts/regression/los_rf.joblib",
+      "meta_paths": {
+        "feature_columns": "artifacts/regression/feature_columns.json"
+      },
+      "input_schema": { "type": "tabular", "field": "features" }
+    },
+    {
+      "model_id": "kmeans_v1",
+      "kind": "sklearn",
+      "task": "clustering",
+      "model_path": "artifacts/clustering/kmeans.joblib",
+      "meta_paths": {
+        "config": "artifacts/clustering/clustering_config.json",
+        "profiles": "artifacts/clustering/cluster_profiles.parquet"
+      },
+      "input_schema": { "type": "tabular", "field": "features" }
+    },
+    {
+      "model_id": "assoc_rules_v1",
+      "kind": "rules",
+      "task": "association_rules",
+      "model_path": "artifacts/assoc/top_rules.parquet",
+      "input_schema": { "type": "items", "field": "items" }
+    },
+    {
+      "model_id": "chatbot_tfidf_v1",
+      "kind": "retrieval",
+      "task": "chatbot",
+      "model_path": "artifacts/chatbot/tfidf.joblib",
+      "meta_paths": {
+        "config": "artifacts/chatbot/chatbot_config.json",
+        "matrix": "artifacts/chatbot/doc_matrix.npz",
+        "store": "artifacts/chatbot/doc_store.parquet"
+      },
+      "input_schema": { "type": "text", "field": "query" }
+    },
+    {
+      "model_id": "xray_cnn_resnet18_bin_v1",
+      "kind": "torch",
+      "task": "imaging",
+      "model_path": "artifacts/imaging/cnn_xray_resnet18_binary.pt",
+      "meta_paths": {
+        "label_map": "artifacts/imaging/finding_label_map.json",
+        "config": "artifacts/imaging/image_config.json"
+      },
+      "input_schema": { "type": "image_base64", "field": "image_b64" }
+    },
+    {
+      "model_id": "xray_multilabel_resnet18_v1",
+      "kind": "cnn_xray_multilabel",
+      "task": "imaging",
+      "model_path": "artifacts/xray_multilabel/cnn_xray_resnet18_multilabel.pt",
+      "meta_paths": {
+        "label_map": "artifacts/xray_multilabel/finding_label_map.json",
+        "config": "artifacts/xray_multilabel/image_config.json",
+        "metrics": "artifacts/xray_multilabel/metrics.json"
+      },
+      "input_schema": { "type": "image_base64", "field": "image_b64" }
+    },
+    {
+      "model_id": "los_lstm_v1",
+      "kind": "torch",
+      "task": "timeseries",
+      "model_path": "artifacts/timeseries/los_lstm.pt",
+      "meta_paths": {
+        "arch": "artifacts/timeseries/arch.json",
+        "config": "artifacts/timeseries/ts_config.json"
+      },
+      "input_schema": { "type": "timeseries", "field": "sequence" }
+    },
+    {
+      "model_id": "los_rnn_v1",
+      "kind": "torch",
+      "task": "timeseries",
+      "model_path": "artifacts/timeseries/los_rnn.pt",
+      "meta_paths": {
+        "arch": "artifacts/timeseries/arch.json",
+        "config": "artifacts/timeseries/ts_config.json"
+      },
+      "input_schema": { "type": "timeseries", "field": "sequence" }
+    },
+    {
+      "model_id": "translator_marian_v2",
+      "kind": "hf_translation",
+      "task": "translation",
+      "model_path": "artifacts/translator/translator_marian_v2/translator_config.json",
+      "meta_paths": {
+        "config": "artifacts/translator/translator_marian_v2/translator_config.json"
+      },
+      "input_schema": { "type": "text", "field": "text" }
+    },
+    {
+      "model_id": "chatbot_rag_conversational_v3",
+      "kind": "torch",
+      "task": "chatbot",
+      "model_path": "artifacts/chatbot/chatbot_rag_conversational_v3/model.pt",
+      "meta_paths": {
+        "config": "artifacts/chatbot/chatbot_rag_conversational_v3/chatbot_config.json",
+        "vocab": "artifacts/chatbot/chatbot_rag_conversational_v3/vocab.pkl",
+        "idx2word": "artifacts/chatbot/chatbot_rag_conversational_v3/idx2word.pkl",
+        "tfidf": "artifacts/chatbot/chatbot_rag_conversational_v3/tfidf.joblib",
+        "store": "artifacts/chatbot/chatbot_rag_conversational_v3/doc_store.parquet"
+      },
+      "input_schema": {
+        "type": "text",
+        "field": "query"
+      }
+    }
+  ]
+}

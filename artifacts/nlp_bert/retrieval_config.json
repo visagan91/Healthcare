@@ -1,0 +1,4 @@
+{
+  "similarity": "cosine",
+  "top_k_default": 5
+}

@@ -1,0 +1,4 @@
+{
+  "text_col": "patient_feedback_text",
+  "label_col": "sentiment_label"
+}

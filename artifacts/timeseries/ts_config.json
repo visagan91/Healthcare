@@ -1,0 +1,23 @@
+{
+  "task": "los_days_regression_timeseries",
+  "input_shape": {
+    "T": 20,
+    "F": 4
+  },
+  "feature_names": [
+    "f0",
+    "f1",
+    "f2",
+    "f3"
+  ],
+  "padding": "zero_pad",
+  "target": "los_days",
+  "models": {
+    "rnn": {
+      "weights": "los_rnn.pt"
+    },
+    "lstm": {
+      "weights": "los_lstm.pt"
+    }
+  }
+}

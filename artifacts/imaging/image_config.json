@@ -1,0 +1,9 @@
+{
+  "arch": "resnet18",
+  "num_classes": 2,
+  "image_size": 224,
+  "normalize": false,
+  "mean": null,
+  "std": null,
+  "input_mode": "RGB"
+}

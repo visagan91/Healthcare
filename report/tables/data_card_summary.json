@@ -1,0 +1,23 @@
+{
+  "rows": 5606,
+  "columns": 69,
+  "unique_patients": 1944,
+  "unique_encounters": 5606,
+  "risk_category_distribution": {
+    "medium": 3112,
+    "low": 1322,
+    "high": 1172
+  },
+  "missingness_top10": {
+    "triage_level": 65.54,
+    "procedure_codes": 20.32,
+    "secondary_dx_codes": 20.28,
+    "ldl_mg_dl": 19.48,
+    "hba1c_pct": 18.85,
+    "troponin_ng_ml": 18.64,
+    "lactate_mmol_l": 17.07,
+    "bun_mg_dl": 14.32,
+    "egfr_ml_min": 13.82,
+    "sodium_mmol_l": 12.75
+  }
+}

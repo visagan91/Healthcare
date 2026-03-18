@@ -1,0 +1,22 @@
+{
+  "arch": "resnet18",
+  "image_size": 224,
+  "input_mode": "RGB",
+  "normalize": false,
+  "num_classes": 11,
+  "multilabel": true,
+  "threshold": 0.5,
+  "labels": [
+    "Atelectasis",
+    "Cardiomegaly",
+    "Consolidation",
+    "Edema",
+    "Effusion",
+    "Emphysema",
+    "Infiltration",
+    "Mass",
+    "Nodule",
+    "Pleural_Thickening",
+    "Pneumothorax"
+  ]
+}

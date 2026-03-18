@@ -1,0 +1,12 @@
+{
+  "model_id": "translator_v1",
+  "kind": "translation",
+  "task": "translation",
+  "input_schema": {
+    "type": "text",
+    "field": "text"
+  },
+  "provider": "gcp",
+  "default_source_lang": "auto",
+  "default_target_lang": "en"
+}

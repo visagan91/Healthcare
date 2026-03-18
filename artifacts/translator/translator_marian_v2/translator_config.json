@@ -1,0 +1,31 @@
+{
+  "model_id": "translator_marian_v2",
+  "kind": "hf_translation",
+  "task": "translation",
+  "input_schema": {
+    "type": "text",
+    "field": "text"
+  },
+  "source_lang_field": "source_lang",
+  "target_lang_field": "target_lang",
+  "supported_languages": [
+    "en",
+    "ta",
+    "ml",
+    "te",
+    "hi"
+  ],
+  "models": {
+    "en_dra": "Helsinki-NLP/opus-mt-en-dra",
+    "dra_en": "Helsinki-NLP/opus-mt-dra-en",
+    "en_hi": "Helsinki-NLP/opus-mt-en-hi",
+    "hi_en": "Helsinki-NLP/opus-mt-hi-en"
+  },
+  "lang_tokens": {
+    "ta": ">>tam<<",
+    "ml": ">>mal<<",
+    "te": ">>tel<<"
+  },
+  "default_source_lang": "auto",
+  "default_target_lang": "en"
+}

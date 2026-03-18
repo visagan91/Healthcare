@@ -1,0 +1,5 @@
+{
+  "model_name": "emilyalsentzer/Bio_ClinicalBERT",
+  "pooling": "mean",
+  "normalize_embeddings": true
+}
