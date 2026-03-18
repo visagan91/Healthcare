@@ -1,0 +1,15 @@
+venv
+.git
+.github
+__pycache__
+.pytest_cache
+.ipynb_checkpoints
+.DS_Store
+*.pyc
+*.pyo
+*.pyd
+.env
+notebooks
+report
+README
+Report.pdf.pages
