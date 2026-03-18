@@ -3,16 +3,16 @@ import pandas as pd
 
 from api_client import predict
 from ui.shell import app_shell
-from ui.common import set_page, analyst_toggle, show_advanced
+from ui.common import show_advanced
 
-ok, models, analyst_mode = app_shell("Patient grouping", "Groups patients into clinically similar subpopulations based on vitals and laboratory measurements using KMeans segmentation.")
+ok, models, analyst_mode = app_shell(
+    "Patient grouping",
+    "Groups patients into clinically similar subpopulations based on vitals and laboratory measurements using KMeans segmentation."
+)
 if not ok:
     st.stop()
 
-set_page()
 st.title("Patient Clustering")
-analyst_mode = analyst_toggle()
-
 
 model_id = "kmeans_v1"
 
@@ -21,7 +21,6 @@ st.caption(
 )
 
 def opt_float(label: str, key: str, placeholder: str = "", help: str | None = None):
-    """Optional float input: blank -> None"""
     s = st.text_input(label, value="", placeholder=placeholder, key=key, help=help)
     s = (s or "").strip()
     if s == "":
@@ -33,7 +32,6 @@ def opt_float(label: str, key: str, placeholder: str = "", help: str | None = No
         return None
 
 def opt_int(label: str, key: str, placeholder: str = "", help: str | None = None):
-    """Optional int input: blank -> None"""
     s = st.text_input(label, value="", placeholder=placeholder, key=key, help=help)
     s = (s or "").strip()
     if s == "":
@@ -44,9 +42,6 @@ def opt_int(label: str, key: str, placeholder: str = "", help: str | None = None
         st.error(f"'{label}' must be an integer (or leave blank). You entered: {s}")
         return None
 
-# -------------------------
-# Inputs (all optional)
-# -------------------------
 st.subheader("Basics")
 col1, col2, col3 = st.columns(3)
 with col1:
@@ -82,7 +77,6 @@ with l3:
 
 crp_mg_l = opt_float("CRP (mg/L)", "crp_mg_l", placeholder="e.g., 5")
 
-# Build features dict with ONLY provided fields
 features = {
     "triage_level": triage_level,
     "age": age,
@@ -113,7 +107,6 @@ if st.button("Assign cluster"):
     st.subheader("Result")
     st.write("**Cluster ID:**", out)
 
-    # Helpful: show what was missing and imputed (if backend provides it)
     if "imputed_columns" in meta and meta["imputed_columns"]:
         st.info("Imputed missing inputs: " + ", ".join(meta["imputed_columns"]))
 

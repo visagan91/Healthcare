@@ -20,7 +20,7 @@ def _safe_page_link(path: str, label: str, icon: str):
 
 
 def app_shell(title: str, subtitle: str | None = None):
-    st.set_page_config(page_title="Healthcare AI Workbench", layout="wide")
+    
 
     # Sidebar
     with st.sidebar:

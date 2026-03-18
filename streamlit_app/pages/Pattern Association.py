@@ -6,15 +6,16 @@ import streamlit as st
 
 from api_client import predict
 from ui.shell import app_shell
-from ui.common import set_page, analyst_toggle, show_advanced
+from ui.common import show_advanced
 
-ok, models, analyst_mode = app_shell("Pattern Association", "Discovers and displays statistically significant medical co-occurrence patterns to support clinical insight, comorbidity analysis, and operational planning.")
+ok, models, analyst_mode = app_shell(
+    "Pattern Association",
+    "Discovers and displays statistically significant medical co-occurrence patterns to support clinical insight, comorbidity analysis, and operational planning."
+)
 if not ok:
     st.stop()
 
-set_page()
 st.title("Medical Association Rules")
-analyst_mode = analyst_toggle()
 
 model_id = "assoc_rules_v1"
 
@@ -48,7 +49,6 @@ if st.button("Find associations"):
     out = resp.get("output")
     meta = resp.get("meta") or {}
 
-    # Helpful diagnostics
     unknown = meta.get("unknown_items") or []
     mapped = meta.get("mapped_items") or []
     if mapped:
@@ -59,7 +59,6 @@ if st.button("Find associations"):
     st.subheader("Matched rules")
     if isinstance(out, list) and out:
         df = pd.json_normalize(out) if isinstance(out[0], dict) else pd.DataFrame({"rule": out})
-        # reorder key fields first when available
         preferred = [c for c in ["antecedents_list", "consequents_list", "support", "confidence", "lift"] if c in df.columns]
         rest = [c for c in df.columns if c not in preferred]
         df = df[preferred + rest]

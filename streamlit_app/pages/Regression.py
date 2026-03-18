@@ -2,15 +2,16 @@ import streamlit as st
 
 from api_client import predict
 from ui.shell import app_shell
-from ui.common import set_page, analyst_toggle, show_advanced
+from ui.common import show_advanced
 
-ok, models, analyst_mode = app_shell("Regression", "Predict the patient’s expected hospital Length of Stay (LOS) in days using clinical, vital, and laboratory inputs.")
+ok, models, analyst_mode = app_shell(
+    "Regression",
+    "Predict the patient’s expected hospital Length of Stay (LOS) in days using clinical, vital, and laboratory inputs."
+)
 if not ok:
     st.stop()
 
-set_page()
 st.title("Length of Stay (LOS) Prediction")
-analyst_mode = analyst_toggle()
 
 st.caption("Fill what you know. You can leave any field blank — missing values will be estimated for prediction.")
 
@@ -29,7 +30,6 @@ def opt_float(label: str, key: str, placeholder: str = ""):
     try:
         return float(s)
     except ValueError:
-        # no hard error — just ignore this field
         st.warning(f"Ignoring '{label}': please enter a number or leave blank.")
         return None
 

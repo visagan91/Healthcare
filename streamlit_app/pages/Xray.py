@@ -7,20 +7,14 @@ import requests
 import streamlit as st
 
 from ui.shell import app_shell
-from ui.common import set_page, analyst_toggle, show_advanced
+from ui.common import show_advanced
 
-ok, models, analyst_mode_from_shell = app_shell(
+ok, models, analyst_mode = app_shell(
     "🩻 Chest X-ray Imaging",
     "Multilabel CNN-based finding detection",
 )
 if not ok:
     st.stop()
-
-set_page()
-st.title("🩻 Chest X-ray Imaging (CNN)")
-st.caption("Upload a chest X-ray image to detect likely findings.")
-
-analyst_mode = analyst_toggle()
 
 API_BASE_URL = os.environ.get("API_BASE_URL", "http://localhost:8000")
 
@@ -30,7 +24,7 @@ uploaded_file = st.file_uploader(
 )
 
 if uploaded_file is not None:
-    st.image(uploaded_file, caption="Uploaded image", use_container_width=True)
+    st.image(uploaded_file, caption="Uploaded image")
 
 run_clicked = st.button("Run X-ray model")
 
